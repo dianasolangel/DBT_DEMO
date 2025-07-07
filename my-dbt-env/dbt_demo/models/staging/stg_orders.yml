@@ -3,5 +3,14 @@ version: 2
 models:
     - name: stg_orders
       columns:
-        - name: customer_id
-        - name: customer_name
+          - name: customer_id
+            tests:
+              - not_null
+              - unique
+          - name: customer_name
+            tests:
+              - not_null
+          - name: ordered_at
+            tests:
+              - not_null
+      
